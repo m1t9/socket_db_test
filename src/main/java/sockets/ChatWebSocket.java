@@ -26,7 +26,6 @@ public class ChatWebSocket {
     public void sendString(String message) {
         try {
             session.getRemote().sendString(message);
-            System.out.println(" message: " + message);
             long id = dbService.addMessage(message);
         } catch (Exception e) {
             System.out.println(e.getMessage());
